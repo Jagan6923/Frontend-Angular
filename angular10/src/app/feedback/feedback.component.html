@@ -1,0 +1,25 @@
+<div class="container">
+  <h3 class="d-flex justify-content-center">Feedback Form</h3>
+
+  <form (ngSubmit)="submitFeedback()">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="feedbackData.Feedbackmailid" class="form-control" autocomplete="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="feedbackText">Feedback:</label>
+      <textarea id="feedbackText" name="feedbackText" [(ngModel)]="feedbackData.Feedback" class="form-control" autocomplete="off" required></textarea>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Feedback</button>
+  </form>
+</div>
